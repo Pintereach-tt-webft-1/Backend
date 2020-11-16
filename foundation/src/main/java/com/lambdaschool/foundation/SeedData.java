@@ -118,7 +118,7 @@ public class SeedData
 
         // user
         User u3 = new User("barnbarn",
-            "ILuvM4th!",
+            "password",
             "barnbarn@lambdaschool.local");
         u3.getRoles()
             .add(new UserRoles(u3,
