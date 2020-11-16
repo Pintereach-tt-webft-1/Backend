@@ -47,7 +47,15 @@ public class UserServiceImpl
     public List<User> findByNameContaining(String username)
     {
 
-        return userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase());
+        //return userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase());
+
+        List allMatches = userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase());
+        if (allMatches == null)
+        {
+            throw new ResourceNotFoundException("User name " + username + " not found!");
+        }
+        return allMatches;
+
     }
 
     @Override

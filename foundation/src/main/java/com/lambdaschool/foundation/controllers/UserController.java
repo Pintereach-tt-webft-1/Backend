@@ -94,7 +94,7 @@ public class UserController
 
     /**
      * Returns a list of users whose username contains the given substring
-     * <br>Example: <a href="http://localhost:2019/users/user/name/like/da">http://localhost:2019/users/user/name/like/da</a>
+     * <br>Example: <a href="http://localhost:2019/users/user/name/like/ad">http://localhost:2019/users/user/name/like/da</a>
      *
      * @param userName Substring of the username for which you seek
      * @return A JSON list of users you seek
