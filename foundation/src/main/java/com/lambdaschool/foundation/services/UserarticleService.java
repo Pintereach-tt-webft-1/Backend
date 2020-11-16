@@ -43,9 +43,7 @@ public interface UserarticleService
      */
     Userarticle update(
         long userarticleid,
-        String articletitle,
-        String category,
-        int priority);
+        Userarticle updateArticle);
 
     /**
      * Add a new User Article combination

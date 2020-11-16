@@ -84,22 +84,18 @@ public class UserarticleController
      * <br>Example: <a href="http://localhost:2019/userarticles/userarticle/9/article/______">http://localhost:2019/userarticles/userarticle/9/article/______</a>
      *
      * @param userarticleid  The primary key of the user email combination you wish to change
-     * @param articletitle The new email (String)
+     * @param updateArticle The updated article (Userarticle)
      * @return Status of OK
      */
-    @PutMapping("/userarticle/{userarticleid}/article/{article}")
+    @PutMapping(value = "/userarticle/{userarticleid}", consumes = "application/json")
     public ResponseEntity<?> updateUserArticle(
         @PathVariable
             long userarticleid,
-        @PathVariable
-            String articletitle,
-        @PathVariable
-            String category,
-        @PathVariable
-            int priority)
+        @RequestBody
+            Userarticle updateArticle)
     {
         userarticleService.update(userarticleid,
-            articletitle, category, priority);
+            updateArticle);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

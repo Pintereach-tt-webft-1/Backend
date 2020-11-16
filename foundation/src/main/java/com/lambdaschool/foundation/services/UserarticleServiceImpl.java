@@ -79,9 +79,7 @@ public class UserarticleServiceImpl
     @Override
     public Userarticle update(
         long userarticleid,
-        String articletitle,
-        String category,
-        int priority)
+        Userarticle updateUserarticle)
     {
         if (userarticleRepository.findById(userarticleid)
             .isPresent())
@@ -92,9 +90,9 @@ public class UserarticleServiceImpl
                 .getUsername()))
             {
                 Userarticle userarticle = findUserarticleById(userarticleid);
-                userarticle.setArticletitle(articletitle);
-                userarticle.setCategory(category.toLowerCase());
-                userarticle.setPriority(priority);
+                userarticle.setArticletitle(updateUserarticle.getArticletitle());
+                userarticle.setCategory(updateUserarticle.getCategory().toLowerCase());
+                userarticle.setPriority(updateUserarticle.getPriority());
                 return userarticleRepository.save(userarticle);
             } else
             {
@@ -104,7 +102,7 @@ public class UserarticleServiceImpl
             }
         } else
         {
-            throw new ResourceNotFoundException("Useremail with id " + userarticleid + " Not Found!");
+            throw new ResourceNotFoundException("Userarticle with id " + userarticleid + " Not Found!");
         }
     }
 
