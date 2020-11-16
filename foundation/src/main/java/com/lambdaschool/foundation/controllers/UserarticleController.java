@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -105,33 +106,24 @@ public class UserarticleController
     /**
      * Adds a new user article combination
      *
-     * @param userid       the user id of the new user article combination
-     * @param articletitle the articletitle of the new user article combination
+     * @param newArticle the new article of the new user article combination
      * @return A location header with the URI to the newly created user article combination and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header
-     * @see UserarticleService#save(long, String, String, int) UseremailService.save(long, String)
+     * @see UserarticleService#save(Userarticle)
      */
-    @PostMapping(value = "/user/{userid}/article/{articletitle}")
+    @PostMapping(value = "/user/article", consumes = "application/json")
     public ResponseEntity<?> addNewUserArticle(
-        @PathVariable
-            long userid,
-        @PathVariable
-            String articletitle,
-        @PathVariable
-            String category,
-        @PathVariable
-            int priority) throws
+        @Valid
+        @RequestBody
+            Userarticle newArticle) throws
                                  URISyntaxException
     {
-        Userarticle newUserArticle = userarticleService.save(userid,
-            articletitle,
-                category,
-                priority);
+        Userarticle newUserArticle = userarticleService.save(newArticle);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newUserArticleURI = ServletUriComponentsBuilder.fromCurrentServletMapping()
-            .path("/userarticles/userarticle/{userarticleid}")
+            .path("/{userarticleid}")
             .buildAndExpand(newUserArticle.getUserarticleid())
             .toUri();
         responseHeaders.setLocation(newUserArticleURI);

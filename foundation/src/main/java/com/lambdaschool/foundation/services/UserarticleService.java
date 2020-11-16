@@ -50,13 +50,9 @@ public interface UserarticleService
     /**
      * Add a new User Article combination
      *
-     * @param userid       the userid of the new user article combination
-     * @param articletitle the article title of the new user article combination
+//     * @param userid       the userid of the new user article combination
+     * @param newArticle the new article of the new user article combination
      * @return the new user article combination
      */
-    Userarticle save(
-        long userid,
-        String articletitle,
-        String category,
-        int priority);
+    Userarticle save(Userarticle newArticle);
 }

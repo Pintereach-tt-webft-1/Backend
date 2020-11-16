@@ -110,19 +110,17 @@ public class UserarticleServiceImpl
 
     @Transactional
     @Override
-    public Userarticle save(
-        long userid,
-        String articletitle,
-        String category,
-        int priority)
+    public Userarticle save(Userarticle newArticle)
     {
-        User currentUser = userService.findUserById(userid);
+        User currentUser = userService.findUserById(newArticle.getUser().getUserid());
 
         if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
         {
-            Userarticle newUserArticle = new Userarticle(currentUser,
-                articletitle, category, priority);
-            return userarticleRepository.save(newUserArticle);
+//            Userarticle newUserArticle = new Userarticle(currentUser,
+//                articletitle, category, priority);
+//            return userarticleRepository.save(newUserArticle);
+
+            return userarticleRepository.save(newArticle);
         } else
         {
             // note we should never get to this line but is needed for the compiler
