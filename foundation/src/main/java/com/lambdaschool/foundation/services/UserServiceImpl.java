@@ -4,7 +4,7 @@ import com.lambdaschool.foundation.exceptions.ResourceNotFoundException;
 import com.lambdaschool.foundation.models.Role;
 import com.lambdaschool.foundation.models.User;
 import com.lambdaschool.foundation.models.UserRoles;
-import com.lambdaschool.foundation.models.Useremail;
+import com.lambdaschool.foundation.models.Userarticle;
 import com.lambdaschool.foundation.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -115,13 +115,13 @@ public class UserServiceImpl
                     addRole));
         }
 
-        newUser.getUseremails()
+        newUser.getUserarticles()
             .clear();
-        for (Useremail ue : user.getUseremails())
+        for (Userarticle ue : user.getUserarticles())
         {
-            newUser.getUseremails()
-                .add(new Useremail(newUser,
-                    ue.getUseremail()));
+            newUser.getUserarticles()
+                .add(new Userarticle(newUser,
+                    ue.getUserarticle()));
         }
 
         return userrepos.save(newUser);
@@ -172,16 +172,16 @@ public class UserServiceImpl
                 }
             }
 
-            if (user.getUseremails()
+            if (user.getUserarticles()
                 .size() > 0)
             {
-                currentUser.getUseremails()
+                currentUser.getUserarticles()
                     .clear();
-                for (Useremail ue : user.getUseremails())
+                for (Userarticle ue : user.getUserarticles())
                 {
-                    currentUser.getUseremails()
-                        .add(new Useremail(currentUser,
-                            ue.getUseremail()));
+                    currentUser.getUserarticles()
+                        .add(new Userarticle(currentUser,
+                            ue.getUserarticle()));
                 }
             }
 

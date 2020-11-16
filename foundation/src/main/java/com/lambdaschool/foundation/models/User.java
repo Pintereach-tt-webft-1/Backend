@@ -52,14 +52,14 @@ public class User
     private String primaryemail;
 
     /**
-     * A list of emails for this user
+     * A list of articles for this user
      */
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
     @JsonIgnoreProperties(value = "user",
         allowSetters = true)
-    private List<Useremail> useremails = new ArrayList<>();
+    private List<Userarticle> userarticles = new ArrayList<>();
 
     /**
      * Part of the join relationship between user and role
@@ -188,23 +188,23 @@ public class User
     }
 
     /**
-     * Getter for the list of useremails for this user
+     * Getter for the list of userarticles for this user
      *
-     * @return the list of useremails (List(Useremail)) for this user
+     * @return the list of userarticles (List(Userarticle)) for this user
      */
-    public List<Useremail> getUseremails()
+    public List<Userarticle> getUserarticles()
     {
-        return useremails;
+        return userarticles;
     }
 
     /**
-     * Setter for list of useremails for this user
+     * Setter for list of userarticles for this user
      *
-     * @param useremails the new list of useremails (List(Useremail)) for this user
+     * @param userarticles the new list of userarticles (List(Userarticle)) for this user
      */
-    public void setUseremails(List<Useremail> useremails)
+    public void setUserarticles(List<Userarticle> userarticles)
     {
-        this.useremails = useremails;
+        this.userarticles = userarticles;
     }
 
     /**

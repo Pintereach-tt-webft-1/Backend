@@ -88,16 +88,16 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="contentContainer">
 <div class="inheritance" title="Inheritance Tree">java.lang.Object
-<div class="inheritance">com.lambdaschool.foundation.models.Useremail</div>
+<div class="inheritance">com.lambdaschool.foundation.models.Userarticle</div>
 </div>
 <section class="description">
 <hr>
 <pre>@Entity
 public class <span class="typeNameLabel">Useremail</span>
 extends java.lang.Object</pre>
-<div class="block">The entity allowing interaction with the useremails table
+<div class="block">The entity allowing interaction with the userarticles table
  <p>
- requires each combination of user and useremail to be unique. The same email cannot be assigned to the same user more than once.</div>
+ requires each combination of user and userarticle to be unique. The same email cannot be assigned to the same user more than once.</div>
 </section>
 <section class="summary">
 <ul class="blockList">
@@ -175,9 +175,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(com.lambdaschool.usermodel.models.User,java.lang.String)">Useremail</a></span>&#8203;(<a href="User.html" title="class in com.lambdaschool.foundation.models">User</a>&nbsp;user,
-java.lang.String&nbsp;useremail)</code></th>
+java.lang.String&nbsp;userarticle)</code></th>
 <td class="colLast">
-<div class="block">Given the parameters, create a new useremail object</div>
+<div class="block">Given the parameters, create a new userarticle object</div>
 </td>
 </tr>
 </tbody>
@@ -214,7 +214,7 @@ java.lang.String&nbsp;useremail)</code></th>
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUseremail()">getUseremail</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Getter for useremail</div>
+<div class="block">Getter for userarticle</div>
 </td>
 </tr>
 <tr class="altColor" id="i2">
@@ -233,9 +233,9 @@ java.lang.String&nbsp;useremail)</code></th>
 </tr>
 <tr class="altColor" id="i4">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setUseremail(java.lang.String)">setUseremail</a></span>&#8203;(java.lang.String&nbsp;useremail)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setUseremail(java.lang.String)">setUseremail</a></span>&#8203;(java.lang.String&nbsp;userarticle)</code></th>
 <td class="colLast">
-<div class="block">Setter for useremail</div>
+<div class="block">Setter for userarticle</div>
 </td>
 </tr>
 <tr class="rowColor" id="i5">
@@ -320,12 +320,12 @@ java.lang.String&nbsp;useremail)</code></th>
 <section class="detail">
 <h3><a id="&lt;init&gt;(com.lambdaschool.usermodel.models.User,java.lang.String)">Useremail</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="memberName">Useremail</span>&#8203;(<span class="arguments"><a href="User.html" title="class in com.lambdaschool.foundation.models">User</a>&nbsp;user,
-java.lang.String&nbsp;useremail)</span></div>
-<div class="block">Given the parameters, create a new useremail object</div>
+java.lang.String&nbsp;userarticle)</span></div>
+<div class="block">Given the parameters, create a new userarticle object</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>user</code> - the user (User) assigned to the email</dd>
-<dd><code>useremail</code> - useremail (String) for the given user</dd>
+<dd><code>userarticle</code> - userarticle (String) for the given user</dd>
 </dl>
 </section>
 </li>
@@ -346,7 +346,7 @@ java.lang.String&nbsp;useremail)</span></div>
 <div class="block">Getter for useremailid</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the primary key (long) of this useremail object</dd>
+<dd>the primary key (long) of this userarticle object</dd>
 </dl>
 </section>
 </li>
@@ -357,7 +357,7 @@ java.lang.String&nbsp;useremail)</span></div>
 <div class="block">Setter for useremailid. Used for seeding data</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>useremailid</code> - the new primary key (long) of this useremail object</dd>
+<dd><code>useremailid</code> - the new primary key (long) of this userarticle object</dd>
 </dl>
 </section>
 </li>
@@ -365,21 +365,21 @@ java.lang.String&nbsp;useremail)</span></div>
 <section class="detail">
 <h3><a id="getUseremail()">getUseremail</a></h3>
 <div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">java.lang.String</span>&nbsp;<span class="memberName">getUseremail</span>()</div>
-<div class="block">Getter for useremail</div>
+<div class="block">Getter for userarticle</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the email (String) associated with this useremail object in lowercase</dd>
+<dd>the email (String) associated with this userarticle object in lowercase</dd>
 </dl>
 </section>
 </li>
 <li class="blockList">
 <section class="detail">
 <h3><a id="setUseremail(java.lang.String)">setUseremail</a></h3>
-<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setUseremail</span>&#8203;(<span class="arguments">java.lang.String&nbsp;useremail)</span></div>
-<div class="block">Setter for useremail</div>
+<div class="memberSignature"><span class="modifiers">public</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">setUseremail</span>&#8203;(<span class="arguments">java.lang.String&nbsp;userarticle)</span></div>
+<div class="block">Setter for userarticle</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>useremail</code> - the email (String) to replace the one currently assigned to this useremail object, in lowercase</dd>
+<dd><code>userarticle</code> - the email (String) to replace the one currently assigned to this userarticle object, in lowercase</dd>
 </dl>
 </section>
 </li>
@@ -390,7 +390,7 @@ java.lang.String&nbsp;useremail)</span></div>
 <div class="block">Getter for user</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the user object associated with this useremail.</dd>
+<dd>the user object associated with this userarticle.</dd>
 </dl>
 </section>
 </li>
@@ -401,7 +401,7 @@ java.lang.String&nbsp;useremail)</span></div>
 <div class="block">Setter for user</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>user</code> - the user object to replace the one currently assigned to this useremail object</dd>
+<dd><code>user</code> - the user object to replace the one currently assigned to this userarticle object</dd>
 </dl>
 </section>
 </li>

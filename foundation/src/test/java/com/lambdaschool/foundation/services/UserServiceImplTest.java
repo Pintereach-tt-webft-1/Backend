@@ -5,7 +5,7 @@ import com.lambdaschool.foundation.exceptions.ResourceNotFoundException;
 import com.lambdaschool.foundation.models.Role;
 import com.lambdaschool.foundation.models.User;
 import com.lambdaschool.foundation.models.UserRoles;
-import com.lambdaschool.foundation.models.Useremail;
+import com.lambdaschool.foundation.models.Userarticle;
 import com.lambdaschool.foundation.repository.UserRepository;
 import org.junit.After;
 import org.junit.Before;
@@ -72,19 +72,19 @@ public class UserServiceImplTest
             .add(new UserRoles(u1,
                 r3));
 
-        u1.getUseremails()
-            .add(new Useremail(u1,
+        u1.getUserarticles()
+            .add(new Userarticle(u1,
                 "admin@email.local"));
-        u1.getUseremails()
+        u1.getUserarticles()
             .get(0)
-            .setUseremailid(10);
+            .setUserarticleid(10);
 
-        u1.getUseremails()
-            .add(new Useremail(u1,
+        u1.getUserarticles()
+            .add(new Userarticle(u1,
                 "admin@mymail.local"));
-        u1.getUseremails()
+        u1.getUserarticles()
             .get(1)
-            .setUseremailid(11);
+            .setUserarticleid(11);
 
         u1.setUserid(101);
         userList.add(u1);
@@ -101,26 +101,26 @@ public class UserServiceImplTest
             .add(new UserRoles(u2,
                 r3));
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "cinnamon@mymail.local"));
-        u2.getUseremails()
+        u2.getUserarticles()
             .get(0)
-            .setUseremailid(20);
+            .setUserarticleid(20);
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "hops@mymail.local"));
-        u2.getUseremails()
+        u2.getUserarticles()
             .get(1)
-            .setUseremailid(21);
+            .setUserarticleid(21);
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "bunny@email.local"));
-        u2.getUseremails()
+        u2.getUserarticles()
             .get(2)
-            .setUseremailid(22);
+            .setUserarticleid(22);
 
         u2.setUserid(102);
         userList.add(u2);
@@ -133,12 +133,12 @@ public class UserServiceImplTest
             .add(new UserRoles(u3,
                 r1));
 
-        u3.getUseremails()
-            .add(new Useremail(u3,
+        u3.getUserarticles()
+            .add(new Userarticle(u3,
                 "barnbarn@email.local"));
-        u3.getUseremails()
+        u3.getUserarticles()
             .get(0)
-            .setUseremailid(30);
+            .setUserarticleid(30);
 
         u3.setUserid(103);
         userList.add(u3);
@@ -287,8 +287,8 @@ public class UserServiceImplTest
         u2.getRoles()
             .add(new UserRoles(u2,
                 r2));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "tiger@tiger.local"));
 
         Mockito.when(userrepos.save(any(User.class)))
@@ -311,8 +311,8 @@ public class UserServiceImplTest
         u2.getRoles()
             .add(new UserRoles(u2,
                 r2));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "tiger@tiger.local"));
         u2.setUserid(103L);
 
@@ -340,14 +340,14 @@ public class UserServiceImplTest
             .add(new UserRoles(u2,
                 r2));
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "cinnamon@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "hops@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "bunny@email.thump"));
 
         Mockito.when(userrepos.findById(103L))
@@ -362,9 +362,9 @@ public class UserServiceImplTest
         assertEquals("bunny@email.thump",
             userService.update(u2,
                 103L)
-                .getUseremails()
+                .getUserarticles()
                 .get(2)
-                .getUseremail());
+                .getUserarticle());
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -380,14 +380,14 @@ public class UserServiceImplTest
             .add(new UserRoles(u2,
                 r2));
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "cinnamon@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "hops@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "bunny@email.thump"));
 
         Mockito.when(userrepos.findById(103L))
@@ -402,9 +402,9 @@ public class UserServiceImplTest
         assertEquals("bunny@email.thump",
             userService.update(u2,
                 103L)
-                .getUseremails()
+                .getUserarticles()
                 .get(2)
-                .getUseremail());
+                .getUserarticle());
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -420,14 +420,14 @@ public class UserServiceImplTest
             .add(new UserRoles(u2,
                 r2));
 
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "cinnamon@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "hops@mymail.thump"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
                 "bunny@email.thump"));
 
         Mockito.when(userrepos.findById(103L))
@@ -442,9 +442,9 @@ public class UserServiceImplTest
         assertEquals("bunny@email.thump",
             userService.update(u2,
                 103L)
-                .getUseremails()
+                .getUserarticles()
                 .get(2)
-                .getUseremail());
+                .getUserarticle());
     }
 
     @Test

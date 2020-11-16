@@ -2,8 +2,8 @@ package com.lambdaschool.foundation.services;
 
 import com.lambdaschool.foundation.exceptions.ResourceNotFoundException;
 import com.lambdaschool.foundation.models.User;
-import com.lambdaschool.foundation.models.Useremail;
-import com.lambdaschool.foundation.repository.UseremailRepository;
+import com.lambdaschool.foundation.models.Userarticle;
+import com.lambdaschool.foundation.repository.UserarticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,14 +16,14 @@ import java.util.List;
  */
 @Transactional
 @Service(value = "useremailService")
-public class UseremailServiceImpl
-    implements UseremailService
+public class UserarticleServiceImpl
+    implements UserarticleService
 {
     /**
      * Connects this service to the Useremail model
      */
     @Autowired
-    private UseremailRepository useremailrepos;
+    private UserarticleRepository useremailrepos;
 
     /**
      * Connects this servive to the User Service
@@ -35,9 +35,9 @@ public class UseremailServiceImpl
     private HelperFunctions helperFunctions;
 
     @Override
-    public List<Useremail> findAll()
+    public List<Userarticle> findAll()
     {
-        List<Useremail> list = new ArrayList<>();
+        List<Userarticle> list = new ArrayList<>();
         /*
          * findAll returns an iterator set.
          * iterate over the iterator set and add each element to an array list.
@@ -49,10 +49,10 @@ public class UseremailServiceImpl
     }
 
     @Override
-    public Useremail findUseremailById(long id)
+    public Userarticle findUserarticleById(long id)
     {
         return useremailrepos.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Useremail with id " + id + " Not Found!"));
+            .orElseThrow(() -> new ResourceNotFoundException("Userarticle with id " + id + " Not Found!"));
     }
 
     @Transactional
@@ -71,27 +71,27 @@ public class UseremailServiceImpl
             }
         } else
         {
-            throw new ResourceNotFoundException("Useremail with id " + id + " Not Found!");
+            throw new ResourceNotFoundException("Userarticle with id " + id + " Not Found!");
         }
     }
 
     @Transactional
     @Override
-    public Useremail update(
-        long useremailid,
-        String emailaddress)
+    public Userarticle update(
+        long userarticleid,
+        String articletitle)
     {
-        if (useremailrepos.findById(useremailid)
+        if (useremailrepos.findById(userarticleid)
             .isPresent())
         {
-            if (helperFunctions.isAuthorizedToMakeChange(useremailrepos.findById(useremailid)
+            if (helperFunctions.isAuthorizedToMakeChange(useremailrepos.findById(userarticleid)
                 .get()
                 .getUser()
                 .getUsername()))
             {
-                Useremail useremail = findUseremailById(useremailid);
-                useremail.setUseremail(emailaddress.toLowerCase());
-                return useremailrepos.save(useremail);
+                Userarticle userarticle = findUserarticleById(userarticleid);
+                userarticle.setUserarticle(articletitle.toLowerCase());
+                return useremailrepos.save(userarticle);
             } else
             {
                 // note we should never get to this line but is needed for the compiler
@@ -100,23 +100,23 @@ public class UseremailServiceImpl
             }
         } else
         {
-            throw new ResourceNotFoundException("Useremail with id " + useremailid + " Not Found!");
+            throw new ResourceNotFoundException("Useremail with id " + userarticleid + " Not Found!");
         }
     }
 
     @Transactional
     @Override
-    public Useremail save(
+    public Userarticle save(
         long userid,
-        String emailaddress)
+        String articletitle)
     {
         User currentUser = userService.findUserById(userid);
 
         if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
         {
-            Useremail newUserEmail = new Useremail(currentUser,
-                emailaddress);
-            return useremailrepos.save(newUserEmail);
+            Userarticle newUserArticle = new Userarticle(currentUser,
+                articletitle);
+            return useremailrepos.save(newUserArticle);
         } else
         {
             // note we should never get to this line but is needed for the compiler

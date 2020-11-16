@@ -23,13 +23,13 @@ Thus the new table layout is as follows
 Using the provided seed data, expand each endpoint below to see the output it generates.
 
 <details>
-<summary>http://localhost:2019/useremails/useremails</summary>
+<summary>http://localhost:2019/userarticles/userarticles</summary>
 
 ```JSON
 [
     {
         "useremailid": 5,
-        "useremail": "admin@email.local",
+        "userarticle": "admin@email.local",
         "user": {
             "userid": 4,
             "username": "admin",
@@ -58,7 +58,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 6,
-        "useremail": "admin@mymail.local",
+        "userarticle": "admin@mymail.local",
         "user": {
             "userid": 4,
             "username": "admin",
@@ -87,7 +87,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 8,
-        "useremail": "cinnamon@mymail.local",
+        "userarticle": "cinnamon@mymail.local",
         "user": {
             "userid": 7,
             "username": "cinnamon",
@@ -110,7 +110,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 9,
-        "useremail": "hops@mymail.local",
+        "userarticle": "hops@mymail.local",
         "user": {
             "userid": 7,
             "username": "cinnamon",
@@ -133,7 +133,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 10,
-        "useremail": "bunny@email.local",
+        "userarticle": "bunny@email.local",
         "user": {
             "userid": 7,
             "username": "cinnamon",
@@ -156,7 +156,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     },
     {
         "useremailid": 12,
-        "useremail": "barnbarn@email.local",
+        "userarticle": "barnbarn@email.local",
         "user": {
             "userid": 11,
             "username": "barnbarn",
@@ -177,12 +177,12 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 </details>
 
 <details>
-<summary>http://localhost:2019/useremails/useremail/8</summary>
+<summary>http://localhost:2019/userarticles/userarticle/8</summary>
 
 ```JSON
 {
     "useremailid": 8,
-    "useremail": "cinnamon@mymail.local",
+    "userarticle": "cinnamon@mymail.local",
     "user": {
         "userid": 7,
         "username": "cinnamon",
@@ -208,7 +208,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 </details>
 
 <details>
-<summary>DELETE http://localhost:2019/useremails/useremail/8</summary>
+<summary>DELETE http://localhost:2019/userarticles/userarticle/8</summary>
 
 ```TEXT
 No Body Data
@@ -220,7 +220,7 @@ Status OK
 
 
 <details>
-<summary>PUT http://localhost:2019/useremails/useremail/9/email/favbun@hops.local</summary>
+<summary>PUT http://localhost:2019/userarticles/userarticle/9/email/favbun@hops.local</summary>
 
 OUTPUT
 
@@ -231,12 +231,12 @@ Status OK
 </details>
 
 <details>
-<summary>http://localhost:2019/useremails/useremail/9</summary>
+<summary>http://localhost:2019/userarticles/userarticle/9</summary>
 
 ```JSON
 {
     "useremailid": 9,
-    "useremail": "favbun@hops.local",
+    "userarticle": "favbun@hops.local",
     "user": {
         "userid": 7,
         "username": "cinnamon",
@@ -262,25 +262,25 @@ Status OK
 </details>
 
 <details>
-<summary>POST http://localhost:2019/useremails/user/14/email/favbun@hops.local</summary>
+<summary>POST http://localhost:2019/userarticles/user/14/email/favbun@hops.local</summary>
 
 OUTPUT
 
 ```TEXT
 Status CREATED
 
-Location Header: http://localhost:2019/useremails/useremail/15
+Location Header: http://localhost:2019/userarticles/userarticle/15
 ```
 
 </details>
 
 <details>
-<summary>http://localhost:2019/useremails/useremail/15</summary>
+<summary>http://localhost:2019/userarticles/userarticle/15</summary>
 
 ```JSON
 {
     "useremailid": 15,
-    "useremail": "favbun@hops.local",
+    "userarticle": "favbun@hops.local",
     "user": {
         "userid": 14,
         "username": "misskitty",
@@ -315,14 +315,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 4,
                     "username": "admin",
                     "primaryemail": "admin@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 5,
-                            "useremail": "admin@email.local"
+                            "userarticle": "admin@email.local"
                         },
                         {
                             "useremailid": 6,
-                            "useremail": "admin@mymail.local"
+                            "userarticle": "admin@mymail.local"
                         }
                     ]
                 }
@@ -338,10 +338,10 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 14,
                     "username": "misskitty",
                     "primaryemail": "misskitty@school.lambda",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 15,
-                            "useremail": "favbun@hops.local"
+                            "userarticle": "favbun@hops.local"
                         }
                     ]
                 }
@@ -351,7 +351,7 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 13,
                     "username": "puttat",
                     "primaryemail": "puttat@school.lambda",
-                    "useremails": []
+                    "userarticles": []
                 }
             },
             {
@@ -359,10 +359,10 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 11,
                     "username": "barnbarn",
                     "primaryemail": "barnbarn@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 12,
-                            "useremail": "barnbarn@email.local"
+                            "userarticle": "barnbarn@email.local"
                         }
                     ]
                 }
@@ -372,14 +372,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 7,
                     "username": "cinnamon",
                     "primaryemail": "cinnamon@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 9,
-                            "useremail": "favbun@hops.local"
+                            "userarticle": "favbun@hops.local"
                         },
                         {
                             "useremailid": 10,
-                            "useremail": "bunny@email.local"
+                            "userarticle": "bunny@email.local"
                         }
                     ]
                 }
@@ -389,14 +389,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 4,
                     "username": "admin",
                     "primaryemail": "admin@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 5,
-                            "useremail": "admin@email.local"
+                            "userarticle": "admin@email.local"
                         },
                         {
                             "useremailid": 6,
-                            "useremail": "admin@mymail.local"
+                            "userarticle": "admin@mymail.local"
                         }
                     ]
                 }
@@ -412,14 +412,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 4,
                     "username": "admin",
                     "primaryemail": "admin@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 5,
-                            "useremail": "admin@email.local"
+                            "userarticle": "admin@email.local"
                         },
                         {
                             "useremailid": 6,
-                            "useremail": "admin@mymail.local"
+                            "userarticle": "admin@mymail.local"
                         }
                     ]
                 }
@@ -429,14 +429,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                     "userid": 7,
                     "username": "cinnamon",
                     "primaryemail": "cinnamon@lambdaschool.local",
-                    "useremails": [
+                    "userarticles": [
                         {
                             "useremailid": 9,
-                            "useremail": "favbun@hops.local"
+                            "userarticle": "favbun@hops.local"
                         },
                         {
                             "useremailid": 10,
-                            "useremail": "bunny@email.local"
+                            "userarticle": "bunny@email.local"
                         }
                     ]
                 }
@@ -461,14 +461,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                 "userid": 4,
                 "username": "admin",
                 "primaryemail": "admin@lambdaschool.local",
-                "useremails": [
+                "userarticles": [
                     {
                         "useremailid": 5,
-                        "useremail": "admin@email.local"
+                        "userarticle": "admin@email.local"
                     },
                     {
                         "useremailid": 6,
-                        "useremail": "admin@mymail.local"
+                        "userarticle": "admin@mymail.local"
                     }
                 ]
             }
@@ -478,14 +478,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                 "userid": 7,
                 "username": "cinnamon",
                 "primaryemail": "cinnamon@lambdaschool.local",
-                "useremails": [
+                "userarticles": [
                     {
                         "useremailid": 9,
-                        "useremail": "favbun@hops.local"
+                        "userarticle": "favbun@hops.local"
                     },
                     {
                         "useremailid": 10,
-                        "useremail": "bunny@email.local"
+                        "userarticle": "bunny@email.local"
                     }
                 ]
             }
@@ -509,14 +509,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                 "userid": 4,
                 "username": "admin",
                 "primaryemail": "admin@lambdaschool.local",
-                "useremails": [
+                "userarticles": [
                     {
                         "useremailid": 5,
-                        "useremail": "admin@email.local"
+                        "userarticle": "admin@email.local"
                     },
                     {
                         "useremailid": 6,
-                        "useremail": "admin@mymail.local"
+                        "userarticle": "admin@mymail.local"
                     }
                 ]
             }
@@ -526,14 +526,14 @@ Location Header: http://localhost:2019/useremails/useremail/15
                 "userid": 7,
                 "username": "cinnamon",
                 "primaryemail": "cinnamon@lambdaschool.local",
-                "useremails": [
+                "userarticles": [
                     {
                         "useremailid": 9,
-                        "useremail": "favbun@hops.local"
+                        "userarticle": "favbun@hops.local"
                     },
                     {
                         "useremailid": 10,
-                        "useremail": "bunny@email.local"
+                        "userarticle": "bunny@email.local"
                     }
                 ]
             }
@@ -608,14 +608,14 @@ Status OK
         "userid": 4,
         "username": "admin",
         "primaryemail": "admin@lambdaschool.local",
-        "useremails": [
+        "userarticles": [
             {
                 "useremailid": 5,
-                "useremail": "admin@email.local"
+                "userarticle": "admin@email.local"
             },
             {
                 "useremailid": 6,
-                "useremail": "admin@mymail.local"
+                "userarticle": "admin@mymail.local"
             }
         ],
         "roles": [
@@ -643,14 +643,14 @@ Status OK
         "userid": 7,
         "username": "cinnamon",
         "primaryemail": "cinnamon@lambdaschool.local",
-        "useremails": [
+        "userarticles": [
             {
                 "useremailid": 9,
-                "useremail": "favbun@hops.local"
+                "userarticle": "favbun@hops.local"
             },
             {
                 "useremailid": 10,
-                "useremail": "bunny@email.local"
+                "userarticle": "bunny@email.local"
             }
         ],
         "roles": [
@@ -672,10 +672,10 @@ Status OK
         "userid": 11,
         "username": "barnbarn",
         "primaryemail": "barnbarn@lambdaschool.local",
-        "useremails": [
+        "userarticles": [
             {
                 "useremailid": 12,
-                "useremail": "barnbarn@email.local"
+                "userarticle": "barnbarn@email.local"
             }
         ],
         "roles": [
@@ -691,7 +691,7 @@ Status OK
         "userid": 13,
         "username": "puttat",
         "primaryemail": "puttat@school.lambda",
-        "useremails": [],
+        "userarticles": [],
         "roles": [
             {
                 "role": {
@@ -705,10 +705,10 @@ Status OK
         "userid": 14,
         "username": "misskitty",
         "primaryemail": "misskitty@school.lambda",
-        "useremails": [
+        "userarticles": [
             {
                 "useremailid": 15,
-                "useremail": "favbun@hops.local"
+                "userarticle": "favbun@hops.local"
             }
         ],
         "roles": [
@@ -733,14 +733,14 @@ Status OK
     "userid": 7,
     "username": "cinnamon",
     "primaryemail": "cinnamon@lambdaschool.local",
-    "useremails": [
+    "userarticles": [
         {
             "useremailid": 9,
-            "useremail": "favbun@hops.local"
+            "userarticle": "favbun@hops.local"
         },
         {
             "useremailid": 10,
-            "useremail": "bunny@email.local"
+            "userarticle": "bunny@email.local"
         }
     ],
     "roles": [
@@ -770,14 +770,14 @@ Status OK
     "userid": 7,
     "username": "cinnamon",
     "primaryemail": "cinnamon@lambdaschool.local",
-    "useremails": [
+    "userarticles": [
         {
             "useremailid": 9,
-            "useremail": "favbun@hops.local"
+            "userarticle": "favbun@hops.local"
         },
         {
             "useremailid": 10,
-            "useremail": "bunny@email.local"
+            "userarticle": "bunny@email.local"
         }
     ],
     "roles": [
@@ -818,12 +818,12 @@ DATA
     "username": "Mojo",
     "primaryemail": "mojo@lambdaschool.local",
     "password" : "Coffee123",
-    "useremails": [
+    "userarticles": [
         {
-            "useremail": "mojo@mymail.local"
+            "userarticle": "mojo@mymail.local"
         },
         {
-            "useremail": "mojo@email.local"
+            "userarticle": "mojo@email.local"
         }
         ],
     "roles": [
@@ -867,12 +867,12 @@ DATA
     "username": "stumps",
     "primaryemail": "stumps@lambdaschool.local",
     "password" : "EarlGray123",
-    "useremails": [
+    "userarticles": [
         {
-            "useremail": "stumps@mymail.local"
+            "userarticle": "stumps@mymail.local"
         },
         {
-            "useremail": "stumps@email.local"
+            "userarticle": "stumps@email.local"
         }
         ],
     "roles": [
@@ -908,14 +908,14 @@ Status OK
     "userid": 16,
     "username": "stumps",
     "primaryemail": "stumps@lambdaschool.local",
-    "useremails": [
+    "userarticles": [
         {
             "useremailid": 19,
-            "useremail": "stumps@mymail.local"
+            "userarticle": "stumps@mymail.local"
         },
         {
             "useremailid": 20,
-            "useremail": "stumps@email.local"
+            "userarticle": "stumps@email.local"
         }
     ],
     "roles": [
@@ -946,15 +946,15 @@ DATA
 {
     "username": "cinabun",
     "primaryemail": "cinabun@lambdaschool.home",
-    "useremails": [
+    "userarticles": [
     {
-            "useremail": "cinnamon@mymail.home"
+            "userarticle": "cinnamon@mymail.home"
     },
     {
-            "useremail": "hops@mymail.home"
+            "userarticle": "hops@mymail.home"
     },
     {
-            "useremail": "bunny@email.home"
+            "userarticle": "bunny@email.home"
     }
     ]
 }
@@ -980,18 +980,18 @@ Status OK
     "userid": 7,
     "username": "cinabun",
     "primaryemail": "cinabun@lambdaschool.home",
-    "useremails": [
+    "userarticles": [
         {
             "useremailid": 21,
-            "useremail": "cinnamon@mymail.home"
+            "userarticle": "cinnamon@mymail.home"
         },
         {
             "useremailid": 22,
-            "useremail": "hops@mymail.home"
+            "userarticle": "hops@mymail.home"
         },
         {
             "useremailid": 23,
-            "useremail": "bunny@email.home"
+            "userarticle": "bunny@email.home"
         }
     ],
     "roles": [
