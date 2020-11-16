@@ -74,14 +74,18 @@ public class UserServiceImplTest
 
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "admin@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u1.getUserarticles()
             .get(0)
             .setUserarticleid(10);
 
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "admin@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u1.getUserarticles()
             .get(1)
             .setUserarticleid(11);
@@ -103,21 +107,27 @@ public class UserServiceImplTest
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "cinnamon@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(0)
             .setUserarticleid(20);
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "hops@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(1)
             .setUserarticleid(21);
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "bunny@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(2)
             .setUserarticleid(22);
@@ -135,7 +145,9 @@ public class UserServiceImplTest
 
         u3.getUserarticles()
             .add(new Userarticle(u3,
-                "barnbarn@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u3.getUserarticles()
             .get(0)
             .setUserarticleid(30);
@@ -289,7 +301,9 @@ public class UserServiceImplTest
                 r2));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "tiger@tiger.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
 
         Mockito.when(userrepos.save(any(User.class)))
             .thenReturn(u2);
@@ -313,7 +327,9 @@ public class UserServiceImplTest
                 r2));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "tiger@tiger.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.setUserid(103L);
 
         Mockito.when(userrepos.findById(103L))
@@ -342,13 +358,19 @@ public class UserServiceImplTest
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "cinnamon@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "hops@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "bunny@email.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
 
         Mockito.when(userrepos.findById(103L))
             .thenReturn(Optional.of(userList.get(2)));
@@ -359,12 +381,12 @@ public class UserServiceImplTest
         Mockito.when(userrepos.save(any(User.class)))
             .thenReturn(u2);
 
-        assertEquals("bunny@email.thump",
+        assertEquals("Test Article",
             userService.update(u2,
                 103L)
                 .getUserarticles()
                 .get(2)
-                .getUserarticle());
+                .getArticletitle());
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -382,13 +404,19 @@ public class UserServiceImplTest
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "cinnamon@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "hops@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "bunny@email.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
 
         Mockito.when(userrepos.findById(103L))
             .thenReturn(Optional.empty());
@@ -399,12 +427,12 @@ public class UserServiceImplTest
         Mockito.when(userrepos.save(any(User.class)))
             .thenReturn(u2);
 
-        assertEquals("bunny@email.thump",
+        assertEquals("Test Article",
             userService.update(u2,
                 103L)
                 .getUserarticles()
                 .get(2)
-                .getUserarticle());
+                .getArticletitle());
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -422,13 +450,19 @@ public class UserServiceImplTest
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "cinnamon@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "hops@mymail.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "bunny@email.thump"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
 
         Mockito.when(userrepos.findById(103L))
             .thenReturn(Optional.of(u2));
@@ -439,12 +473,12 @@ public class UserServiceImplTest
         Mockito.when(userrepos.save(any(User.class)))
             .thenReturn(u2);
 
-        assertEquals("bunny@email.thump",
+        assertEquals("Test Article",
             userService.update(u2,
                 103L)
                 .getUserarticles()
                 .get(2)
-                .getUserarticle());
+                .getArticletitle());
     }
 
     @Test

@@ -12,21 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implements the UseremailService Interface
+ * Implements the UserarticleService Interface
  */
 @Transactional
-@Service(value = "useremailService")
+@Service(value = "userarticleService")
 public class UserarticleServiceImpl
     implements UserarticleService
 {
     /**
-     * Connects this service to the Useremail model
+     * Connects this service to the Userarticle model
      */
     @Autowired
-    private UserarticleRepository useremailrepos;
+    private UserarticleRepository userarticleRepository;
 
     /**
-     * Connects this servive to the User Service
+     * Connects this service to the User Service
      */
     @Autowired
     private UserService userService;
@@ -42,7 +42,7 @@ public class UserarticleServiceImpl
          * findAll returns an iterator set.
          * iterate over the iterator set and add each element to an array list.
          */
-        useremailrepos.findAll()
+        userarticleRepository.findAll()
             .iterator()
             .forEachRemaining(list::add);
         return list;
@@ -51,7 +51,7 @@ public class UserarticleServiceImpl
     @Override
     public Userarticle findUserarticleById(long id)
     {
-        return useremailrepos.findById(id)
+        return userarticleRepository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("Userarticle with id " + id + " Not Found!"));
     }
 
@@ -59,15 +59,15 @@ public class UserarticleServiceImpl
     @Override
     public void delete(long id)
     {
-        if (useremailrepos.findById(id)
+        if (userarticleRepository.findById(id)
             .isPresent())
         {
-            if (helperFunctions.isAuthorizedToMakeChange(useremailrepos.findById(id)
+            if (helperFunctions.isAuthorizedToMakeChange(userarticleRepository.findById(id)
                 .get()
                 .getUser()
                 .getUsername()))
             {
-                useremailrepos.deleteById(id);
+                userarticleRepository.deleteById(id);
             }
         } else
         {
@@ -79,19 +79,23 @@ public class UserarticleServiceImpl
     @Override
     public Userarticle update(
         long userarticleid,
-        String articletitle)
+        String articletitle,
+        String category,
+        int priority)
     {
-        if (useremailrepos.findById(userarticleid)
+        if (userarticleRepository.findById(userarticleid)
             .isPresent())
         {
-            if (helperFunctions.isAuthorizedToMakeChange(useremailrepos.findById(userarticleid)
+            if (helperFunctions.isAuthorizedToMakeChange(userarticleRepository.findById(userarticleid)
                 .get()
                 .getUser()
                 .getUsername()))
             {
                 Userarticle userarticle = findUserarticleById(userarticleid);
-                userarticle.setUserarticle(articletitle.toLowerCase());
-                return useremailrepos.save(userarticle);
+                userarticle.setArticletitle(articletitle);
+                userarticle.setCategory(category.toLowerCase());
+                userarticle.setPriority(priority);
+                return userarticleRepository.save(userarticle);
             } else
             {
                 // note we should never get to this line but is needed for the compiler
@@ -108,15 +112,17 @@ public class UserarticleServiceImpl
     @Override
     public Userarticle save(
         long userid,
-        String articletitle)
+        String articletitle,
+        String category,
+        int priority)
     {
         User currentUser = userService.findUserById(userid);
 
         if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
         {
             Userarticle newUserArticle = new Userarticle(currentUser,
-                articletitle);
-            return useremailrepos.save(newUserArticle);
+                articletitle, category, priority);
+            return userarticleRepository.save(newUserArticle);
         } else
         {
             // note we should never get to this line but is needed for the compiler

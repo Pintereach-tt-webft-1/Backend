@@ -78,10 +78,14 @@ public class SeedData
                 r3));
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
 
         userService.save(u1);
 
@@ -97,13 +101,19 @@ public class SeedData
                 r3));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         userService.save(u2);
 
         // user
@@ -115,7 +125,9 @@ public class SeedData
                 r2));
         u3.getUserarticles()
             .add(new Userarticle(u3,
-                "Test Article"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         userService.save(u3);
 
         User u4 = new User("puttat",
@@ -159,7 +171,9 @@ public class SeedData
                         r2));
                 fakeUser.getUserarticles()
                     .add(new Userarticle(fakeUser,
-                        fakeValuesService.bothify("Article")));
+                        fakeValuesService.bothify("Test Article"),
+                            "Test Category",
+                            1000));
                 userService.save(fakeUser);
             }
         }

@@ -86,14 +86,18 @@ public class UserControllerUnitTest
 
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "admin@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u1.getUserarticles()
             .get(0)
             .setUserarticleid(10);
 
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "admin@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u1.getUserarticles()
             .get(1)
             .setUserarticleid(11);
@@ -115,21 +119,27 @@ public class UserControllerUnitTest
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "cinnamon@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(0)
             .setUserarticleid(20);
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "hops@mymail.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(1)
             .setUserarticleid(21);
 
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "bunny@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u2.getUserarticles()
             .get(2)
             .setUserarticleid(22);
@@ -147,7 +157,9 @@ public class UserControllerUnitTest
 
         u3.getUserarticles()
             .add(new Userarticle(u3,
-                "barnbarn@email.local"));
+                    "Test Article",
+                    "Test misc",
+                    1000));
         u3.getUserarticles()
             .get(0)
             .setUserarticleid(30);

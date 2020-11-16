@@ -117,11 +117,13 @@ public class UserServiceImpl
 
         newUser.getUserarticles()
             .clear();
-        for (Userarticle ue : user.getUserarticles())
+        for (Userarticle ua : user.getUserarticles())
         {
             newUser.getUserarticles()
                 .add(new Userarticle(newUser,
-                    ue.getUserarticle()));
+                    ua.getArticletitle(),
+                    ua.getCategory(),
+                    ua.getPriority()));
         }
 
         return userrepos.save(newUser);
@@ -177,11 +179,13 @@ public class UserServiceImpl
             {
                 currentUser.getUserarticles()
                     .clear();
-                for (Userarticle ue : user.getUserarticles())
+                for (Userarticle ua : user.getUserarticles())
                 {
                     currentUser.getUserarticles()
                         .add(new Userarticle(currentUser,
-                            ue.getUserarticle()));
+                            ua.getArticletitle(),
+                            ua.getCategory(),
+                            ua.getPriority()));
                 }
             }
 

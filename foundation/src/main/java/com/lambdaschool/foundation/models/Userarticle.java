@@ -3,7 +3,6 @@ package com.lambdaschool.foundation.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -28,12 +27,19 @@ public class Userarticle
      */
     @NotNull
 //    @Email
-    private String userarticle;
+    private String articletitle;
 
     /**
      * Category (String) for this article. Cannot be nullable.
      */
-    
+    @NotNull
+    private String category;
+
+    /**
+     * Priority (int) for this article. Cannot be nullable.
+     */
+    @NotNull
+    private int priority = 1000;
 
     /**
      * The userid of the user assigned to this article is what is stored in the database.
@@ -60,14 +66,18 @@ public class Userarticle
      * Given the parameters, create a new useremail object
      *
      * @param user      the user (User) assigned to the email
-     * @param userarticle userarticle (String) for the given user
+     * @param articletitle articletitle (String) for the given user
      */
     public Userarticle(
         User user,
-        String userarticle)
+        String articletitle,
+        String category,
+        int priority)
     {
-        this.userarticle = userarticle;
+        this.articletitle = articletitle;
         this.user = user;
+        this.category = category;
+        this.priority = priority;
     }
 
     /**
@@ -95,9 +105,9 @@ public class Userarticle
      *
      * @return the article (String) associated with this userarticle object in lowercase
      */
-    public String getUserarticle()
+    public String getArticletitle()
     {
-        return userarticle;
+        return articletitle;
     }
 
     /**
@@ -105,11 +115,52 @@ public class Userarticle
      *
      * @param userarticle the article (String) to replace the one currently assigned to this userarticle object, in lowercase
      */
-    public void setUserarticle(String userarticle)
+    public void setArticletitle(String userarticle)
     {
-        this.userarticle = userarticle;
+        this.articletitle = userarticle;
     }
 
+    /**
+     * Getter for category
+     *
+     * @return the category (String) associated with this userarticle.
+     */
+
+    public String getCategory()
+    {
+        return category;
+    }
+
+    /**
+     * Setter for category
+     *
+     * @param category the category (String) to replace the one currently assigned to this userarticle object
+     */
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+
+    /**
+     * Getter for priority
+     *
+     * @return the priority (int) associated with this userarticle.
+     */
+
+    public int getPriority()
+    {
+        return priority;
+    }
+
+    /**
+     * Setter for priority
+     *
+     * @param priority the priority (int) to replace the one currently assigned to this userarticle object
+     */
+    public void setPriority(int priority)
+    {
+        this.priority = priority;
+    }
 
     /**
      * Getter for user

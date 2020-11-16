@@ -78,16 +78,20 @@ public class SeedData
                 r3));
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "Gaming the World: How Sports Are Reshaping Global Politics and Culture"));
+                "Gaming the World: How Sports Are Reshaping Global Politics and Culture",
+                    "sports",
+                    1));
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "Article"));
+                "Article",
+                    "misc",
+                    1000));
 
         userService.save(u1);
 
         // data, user
         User u2 = new User("cinnamon",
-            "1234567",
+            "password",
             "cinnamon@lambdaschool.local");
         u2.getRoles()
             .add(new UserRoles(u2,
@@ -97,13 +101,19 @@ public class SeedData
                 r3));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Article"));
+                    "Article",
+                    "misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Article"));
+                    "Article",
+                    "misc",
+                    1000));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                "Article"));
+                    "Article",
+                    "misc",
+                    1000));
         userService.save(u2);
 
         // user
@@ -115,7 +125,9 @@ public class SeedData
                 r2));
         u3.getUserarticles()
             .add(new Userarticle(u3,
-                "Article"));
+                    "Article",
+                    "misc",
+                    1000));
         userService.save(u3);
 
         User u4 = new User("puttat",
@@ -159,7 +171,9 @@ public class SeedData
                         r2));
                 fakeUser.getUserarticles()
                     .add(new Userarticle(fakeUser,
-                        fakeValuesService.bothify("Article")));
+                        fakeValuesService.bothify("Article"),
+                            "misc",
+                            1000));
                 userService.save(fakeUser);
             }
         }

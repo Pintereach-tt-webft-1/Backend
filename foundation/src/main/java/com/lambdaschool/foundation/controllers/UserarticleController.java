@@ -91,10 +91,14 @@ public class UserarticleController
         @PathVariable
             long userarticleid,
         @PathVariable
-            String articletitle)
+            String articletitle,
+        @PathVariable
+            String category,
+        @PathVariable
+            int priority)
     {
         userarticleService.update(userarticleid,
-            articletitle);
+            articletitle, category, priority);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -105,18 +109,24 @@ public class UserarticleController
      * @param articletitle the articletitle of the new user article combination
      * @return A location header with the URI to the newly created user article combination and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header
-     * @see UserarticleService#save(long, String) UseremailService.save(long, String)
+     * @see UserarticleService#save(long, String, String, int) UseremailService.save(long, String)
      */
     @PostMapping(value = "/user/{userid}/article/{articletitle}")
     public ResponseEntity<?> addNewUserArticle(
         @PathVariable
             long userid,
         @PathVariable
-            String articletitle) throws
+            String articletitle,
+        @PathVariable
+            String category,
+        @PathVariable
+            int priority) throws
                                  URISyntaxException
     {
         Userarticle newUserArticle = userarticleService.save(userid,
-            articletitle);
+            articletitle,
+                category,
+                priority);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();

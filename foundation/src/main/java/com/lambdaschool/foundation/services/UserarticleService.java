@@ -43,7 +43,9 @@ public interface UserarticleService
      */
     Userarticle update(
         long userarticleid,
-        String articletitle);
+        String articletitle,
+        String category,
+        int priority);
 
     /**
      * Add a new User Article combination
@@ -54,5 +56,7 @@ public interface UserarticleService
      */
     Userarticle save(
         long userid,
-        String articletitle);
+        String articletitle,
+        String category,
+        int priority);
 }
