@@ -1,11 +1,11 @@
 #Logout
-##GET 
-###http://unit4-bw.herokuapp.com/logout
+GET 
+http://unit4-bw.herokuapp.com/logout
 
 #Create new user
-##POST 
-###http://unit4-bw.herokuapp.com/createnewuser
-####Pass in:
+POST 
+http://unit4-bw.herokuapp.com/createnewuser
+Pass in:
 ```json
 {
     "username": username,
@@ -16,23 +16,23 @@
 
 
 #Get current user info
-##GET 
-###http://unit4-bw.herokuapp.com/users/getuserinfo
+GET 
+http://unit4-bw.herokuapp.com/users/getuserinfo
 
 #Get all articles
-####Note: This is currently only available to admins, not all users. I'll change that later 
+Note: This is currently only available to admins, not all users. I'll change that later 
 today but the api will be down for a bit while I'm making the change
-##GET
-###http://unit4-bw.herokuapp.com/userarticles/userarticles
+GET
+http://unit4-bw.herokuapp.com/userarticles/userarticles
 
 #Delete article
-##DELETE
-###http://unit4-bw.herokuapp.com/userarticles/userarticle/{userarticleid}
+DELETE
+http://unit4-bw.herokuapp.com/userarticles/userarticle/{userarticleid}
 
 #Update article
-##PUT
-###http://unit4-bw.herokuapp.com/userarticles/userarticle/{userarticleid}
-####Pass in
+PUT
+http://unit4-bw.herokuapp.com/userarticles/userarticle/{userarticleid}
+Pass in
 ```json
 {
     "userarticleid": userarticleid,
@@ -42,12 +42,12 @@ today but the api will be down for a bit while I'm making the change
     "user": {}
 }
 ```
-####Note: The user object can be empty, it just needs to be there
+Note: The user object can be empty, it just needs to be there
 
 #Add article
-##POST
-###http://unit4-bw.herokuapp.com/userarticles/user/article
-####Pass in
+POST
+http://unit4-bw.herokuapp.com/userarticles/user/article
+Pass in
 ```json
 {
     "userarticleid": userarticleid,
@@ -57,7 +57,7 @@ today but the api will be down for a bit while I'm making the change
     "user": {}
 }
 ```
-####Note: The user object can be empty, it just needs to be there
+Note: The user object can be empty, it just needs to be there
 
 # java-springfoundation
 
