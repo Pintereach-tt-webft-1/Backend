@@ -1,6 +1,7 @@
 package com.lambdaschool.foundation.controllers;
 
 import com.lambdaschool.foundation.models.Userarticle;
+import com.lambdaschool.foundation.services.HelperFunctions;
 import com.lambdaschool.foundation.services.UserarticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,6 +28,9 @@ public class UserarticleController
      */
     @Autowired
     UserarticleService userarticleService;
+
+    @Autowired
+    HelperFunctions helperFunctions;
 
     /**
      * List of all users articles
@@ -94,6 +98,7 @@ public class UserarticleController
         @RequestBody
             Userarticle updateArticle)
     {
+        updateArticle.setUser(helperFunctions.getCurrentUser());
         userarticleService.update(userarticleid,
             updateArticle);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -114,6 +119,8 @@ public class UserarticleController
             Userarticle newArticle) throws
                                  URISyntaxException
     {
+        newArticle.setUser(helperFunctions.getCurrentUser());
+
         Userarticle newUserArticle = userarticleService.save(newArticle);
 
         // set the location header for the newly created resource

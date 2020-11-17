@@ -14,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Connection;
 import java.util.Locale;
 
 /**
@@ -38,6 +39,8 @@ public class SeedData
      */
     @Autowired
     UserService userService;
+
+    //Connection connection = dataSource.getConnection();
 
     /**
      * Generates test, seed data for our application
