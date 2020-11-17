@@ -6,7 +6,7 @@ import com.github.javafaker.service.RandomService;
 import com.lambdaschool.foundation.models.Role;
 import com.lambdaschool.foundation.models.User;
 import com.lambdaschool.foundation.models.UserRoles;
-import com.lambdaschool.foundation.models.Useremail;
+import com.lambdaschool.foundation.models.Userarticle;
 import com.lambdaschool.foundation.services.RoleService;
 import com.lambdaschool.foundation.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Connection;
 import java.util.Locale;
 
 /**
@@ -38,6 +39,8 @@ public class SeedData
      */
     @Autowired
     UserService userService;
+
+    //Connection connection = dataSource.getConnection();
 
     /**
      * Generates test, seed data for our application
@@ -76,18 +79,22 @@ public class SeedData
         u1.getRoles()
             .add(new UserRoles(u1,
                 r3));
-        u1.getUseremails()
-            .add(new Useremail(u1,
-                "admin@email.local"));
-        u1.getUseremails()
-            .add(new Useremail(u1,
-                "admin@mymail.local"));
+        u1.getUserarticles()
+            .add(new Userarticle(u1,
+                "Gaming the World: How Sports Are Reshaping Global Politics and Culture",
+                    "sports",
+                    1));
+        u1.getUserarticles()
+            .add(new Userarticle(u1,
+                "Article",
+                    "misc",
+                    1000));
 
         userService.save(u1);
 
         // data, user
         User u2 = new User("cinnamon",
-            "1234567",
+            "password",
             "cinnamon@lambdaschool.local");
         u2.getRoles()
             .add(new UserRoles(u2,
@@ -95,27 +102,35 @@ public class SeedData
         u2.getRoles()
             .add(new UserRoles(u2,
                 r3));
-        u2.getUseremails()
-            .add(new Useremail(u2,
-                "cinnamon@mymail.local"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
-                "hops@mymail.local"));
-        u2.getUseremails()
-            .add(new Useremail(u2,
-                "bunny@email.local"));
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
+                    "Article",
+                    "misc",
+                    1000));
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
+                    "Article",
+                    "misc",
+                    1000));
+        u2.getUserarticles()
+            .add(new Userarticle(u2,
+                    "Article",
+                    "misc",
+                    1000));
         userService.save(u2);
 
         // user
         User u3 = new User("barnbarn",
-            "ILuvM4th!",
+            "password",
             "barnbarn@lambdaschool.local");
         u3.getRoles()
             .add(new UserRoles(u3,
                 r2));
-        u3.getUseremails()
-            .add(new Useremail(u3,
-                "barnbarn@email.local"));
+        u3.getUserarticles()
+            .add(new Userarticle(u3,
+                    "Article",
+                    "misc",
+                    1000));
         userService.save(u3);
 
         User u4 = new User("puttat",
@@ -157,9 +172,11 @@ public class SeedData
                 fakeUser.getRoles()
                     .add(new UserRoles(fakeUser,
                         r2));
-                fakeUser.getUseremails()
-                    .add(new Useremail(fakeUser,
-                        fakeValuesService.bothify("????##@gmail.com")));
+                fakeUser.getUserarticles()
+                    .add(new Userarticle(fakeUser,
+                        fakeValuesService.bothify("Article"),
+                            "misc",
+                            1000));
                 userService.save(fakeUser);
             }
         }

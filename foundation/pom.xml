@@ -111,7 +111,7 @@
     </dependencies>
 
     <build>
-        <finalName>jrmmba-stumps</finalName>
+        <finalName>unit4-bw</finalName>
 
         <plugins>
             <plugin>

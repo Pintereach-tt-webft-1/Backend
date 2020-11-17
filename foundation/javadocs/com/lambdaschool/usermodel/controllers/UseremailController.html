@@ -88,12 +88,12 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="contentContainer">
 <div class="inheritance" title="Inheritance Tree">java.lang.Object
-<div class="inheritance">com.lambdaschool.foundation.controllers.UseremailController</div>
+<div class="inheritance">com.lambdaschool.foundation.controllers.UserarticleController</div>
 </div>
 <section class="description">
 <hr>
 <pre>@RestController
-@RequestMapping("/useremails")
+@RequestMapping("/userarticles")
 public class <span class="typeNameLabel">UseremailController</span>
 extends java.lang.Object</pre>
 <div class="block">The entry point for client to access user, email combinations</div>
@@ -156,7 +156,7 @@ java.lang.String&nbsp;emailaddress)</code></th>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deleteUserEmailById(long)">deleteUserEmailById</a></span>&#8203;(long&nbsp;useremailid)</code></th>
 <td class="colLast">
 <div class="block">Removes the given user email combination
- <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/8">http://localhost:2019/userarticles/userarticle/8</a></div>
 </td>
 </tr>
 <tr class="altColor" id="i2">
@@ -164,7 +164,7 @@ java.lang.String&nbsp;emailaddress)</code></th>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUserEmailById(java.lang.Long)">getUserEmailById</a></span>&#8203;(java.lang.Long&nbsp;useremailId)</code></th>
 <td class="colLast">
 <div class="block">Return the user email combination referenced by the given primary key
- <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/8">http://localhost:2019/userarticles/userarticle/8</a></div>
 </td>
 </tr>
 <tr class="rowColor" id="i3">
@@ -172,7 +172,7 @@ java.lang.String&nbsp;emailaddress)</code></th>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listAllUseremails()">listAllUseremails</a></span>()</code></th>
 <td class="colLast">
 <div class="block">List of all users emails
- <br>Example: <a href="http://localhost:2019/useremails/useremails">http://localhost:2019/useremails/useremails</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticles">http://localhost:2019/userarticles/userarticles</a></div>
 </td>
 </tr>
 <tr class="altColor" id="i4">
@@ -181,7 +181,7 @@ java.lang.String&nbsp;emailaddress)</code></th>
 java.lang.String&nbsp;emailaddress)</code></th>
 <td class="colLast">
 <div class="block">Change the email associated with the given user email combination
- <br>Example: <a href="http://localhost:2019/useremails/useremail/9/email/favbun@hops.local">http://localhost:2019/useremails/useremail/9/email/favbun@hops.local</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/9/email/favbun@hops.local">http://localhost:2019/userarticles/userarticle/9/email/favbun@hops.local</a></div>
 </td>
 </tr>
 </tbody>
@@ -225,11 +225,11 @@ java.lang.String&nbsp;emailaddress)</code></th>
 <li class="blockList">
 <section class="detail">
 <h3><a id="listAllUseremails()">listAllUseremails</a></h3>
-<div class="memberSignature"><span class="annotations">@GetMapping(value="/useremails",
+<div class="memberSignature"><span class="annotations">@GetMapping(value="/userarticles",
             produces="application/json")
 </span><span class="modifiers">public</span>&nbsp;<span class="returnType">org.springframework.http.ResponseEntity&lt;?&gt;</span>&nbsp;<span class="memberName">listAllUseremails</span>()</div>
 <div class="block">List of all users emails
- <br>Example: <a href="http://localhost:2019/useremails/useremails">http://localhost:2019/useremails/useremails</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticles">http://localhost:2019/userarticles/userarticles</a></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>JSON list of all users emails</dd>
@@ -239,12 +239,12 @@ java.lang.String&nbsp;emailaddress)</code></th>
 <li class="blockList">
 <section class="detail">
 <h3><a id="getUserEmailById(java.lang.Long)">getUserEmailById</a></h3>
-<div class="memberSignature"><span class="annotations">@GetMapping(value="/useremail/{useremailId}",
+<div class="memberSignature"><span class="annotations">@GetMapping(value="/userarticle/{useremailId}",
             produces="application/json")
 </span><span class="modifiers">public</span>&nbsp;<span class="returnType">org.springframework.http.ResponseEntity&lt;?&gt;</span>&nbsp;<span class="memberName">getUserEmailById</span>&#8203;(<span class="arguments">@PathVariable
 java.lang.Long&nbsp;useremailId)</span></div>
 <div class="block">Return the user email combination referenced by the given primary key
- <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/8">http://localhost:2019/userarticles/userarticle/8</a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>useremailId</code> - the primary key of the user email combination you seek</dd>
@@ -256,11 +256,11 @@ java.lang.Long&nbsp;useremailId)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="deleteUserEmailById(long)">deleteUserEmailById</a></h3>
-<div class="memberSignature"><span class="annotations">@DeleteMapping("/useremail/{useremailid}")
+<div class="memberSignature"><span class="annotations">@DeleteMapping("/userarticle/{useremailid}")
 </span><span class="modifiers">public</span>&nbsp;<span class="returnType">org.springframework.http.ResponseEntity&lt;?&gt;</span>&nbsp;<span class="memberName">deleteUserEmailById</span>&#8203;(<span class="arguments">@PathVariable
 long&nbsp;useremailid)</span></div>
 <div class="block">Removes the given user email combination
- <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/8">http://localhost:2019/userarticles/userarticle/8</a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>useremailid</code> - the primary key of the user email combination you wish to remove</dd>
@@ -272,13 +272,13 @@ long&nbsp;useremailid)</span></div>
 <li class="blockList">
 <section class="detail">
 <h3><a id="updateUserEmail(long,java.lang.String)">updateUserEmail</a></h3>
-<div class="memberSignature"><span class="annotations">@PutMapping("/useremail/{useremailid}/email/{emailaddress}")
+<div class="memberSignature"><span class="annotations">@PutMapping("/userarticle/{useremailid}/email/{emailaddress}")
 </span><span class="modifiers">public</span>&nbsp;<span class="returnType">org.springframework.http.ResponseEntity&lt;?&gt;</span>&nbsp;<span class="memberName">updateUserEmail</span>&#8203;(<span class="arguments">@PathVariable
 long&nbsp;useremailid,
 @PathVariable
 java.lang.String&nbsp;emailaddress)</span></div>
 <div class="block">Change the email associated with the given user email combination
- <br>Example: <a href="http://localhost:2019/useremails/useremail/9/email/favbun@hops.local">http://localhost:2019/useremails/useremail/9/email/favbun@hops.local</a></div>
+ <br>Example: <a href="http://localhost:2019/userarticles/userarticle/9/email/favbun@hops.local">http://localhost:2019/userarticles/userarticle/9/email/favbun@hops.local</a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>useremailid</code> - The primary key of the user email combination you wish to change</dd>
