@@ -38,7 +38,7 @@ public class UserarticleController
      *
      * @return JSON list of all users articles
      */
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/userarticles",
         produces = "application/json")
     public ResponseEntity<?> listAllUserarticles()
@@ -55,7 +55,7 @@ public class UserarticleController
      * @param userarticleId the primary key of the user article combination you seek
      * @return JSON object of the user article combination you seek with a status of OK
      */
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/userarticle/{userarticleId}",
         produces = "application/json")
     public ResponseEntity<?> getUserArticleById(

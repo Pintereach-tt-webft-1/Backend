@@ -86,9 +86,9 @@ public class SeedData
                     1));
         u1.getUserarticles()
             .add(new Userarticle(u1,
-                "Article",
-                    "misc",
-                    1000));
+                "Robert Hatake the lost twin brother of Kakashi",
+                    "anime",
+                    2));
 
         userService.save(u1);
 
@@ -104,19 +104,19 @@ public class SeedData
                 r3));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                    "Article",
-                    "misc",
-                    1000));
+                    "Why Television Is Trouncing Film at Major Media Companies",
+                    "media",
+                    1));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                    "Article",
-                    "misc",
-                    1000));
+                    "Reel Women: Pioneers of the Cinema, 1896 to the Present",
+                    "media",
+                    2));
         u2.getUserarticles()
             .add(new Userarticle(u2,
-                    "Article",
-                    "misc",
-                    1000));
+                    "Supermarkets and the Changing Cultures of Consumption",
+                    "food",
+                    3));
         userService.save(u2);
 
         // user
@@ -128,9 +128,9 @@ public class SeedData
                 r2));
         u3.getUserarticles()
             .add(new Userarticle(u3,
-                    "Article",
-                    "misc",
-                    1000));
+                    "Garfield Named World's Most Syndicated Comic Strip",
+                    "comic",
+                    1));
         userService.save(u3);
 
         User u4 = new User("puttat",
