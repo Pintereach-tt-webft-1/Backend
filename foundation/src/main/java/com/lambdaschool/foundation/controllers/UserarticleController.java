@@ -38,7 +38,7 @@ public class UserarticleController
      *
      * @return JSON list of all users articles
      */
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/userarticles",
         produces = "application/json")
     public ResponseEntity<?> listAllUserarticles()
