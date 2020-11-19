@@ -55,7 +55,7 @@ public class UserarticleController
      * @param userarticleId the primary key of the user article combination you seek
      * @return JSON object of the user article combination you seek with a status of OK
      */
-    //@PreAuthorize("hasAnyRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/userarticle/{userarticleId}",
         produces = "application/json")
     public ResponseEntity<?> getUserArticleById(
